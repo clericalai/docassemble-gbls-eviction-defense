@@ -1,0 +1,86 @@
+modules:
+  - docassemble.base.util
+---
+objects:
+  has_defense: DADict
+  defense_is_recent: DADict
+---
+mandatory: True
+code: |
+  info = objects_from_file('eviction.yml')
+  retaliation_defenses = info['retaliation_defenses']
+  retaliation = info['retaliation']
+---
+question: |
+  What best describes the reason for the eviction?
+field: eviction_reason
+choices:
+  - My landlord says I owe rent.
+  - My landlord says I violated the lease.
+  - My landlord doesn't want to rent to me any longer but it's not because of something I did. (For example, my landlord wants to rent to a family member.)
+---
+question: What court is your case being heard in?
+fields: 
+  - Court name: eviction_court
+    datatype: court
+  - County: county
+---
+question: Please sign below
+signature: client_signature
+---
+question: |
+  Do you have a counterclaim?
+yesno: retaliation_counterclaim
+---
+code: |
+if eviction_reason=="My landlord says I violated the lease":
+  retaliation_counterclaim = False
+else:
+  retaliation_counterclaim = True
+---
+question: |
+  What was the improper reason why your landlord threatened
+  you with eviction?
+fields:
+  - Reason: retaliation_defense_other
+---
+question: |
+  % if i == 'other':
+  Did your landlord threaten you with eviction for some other
+  improper reason?
+  % else:
+  ${ retaliation[i].question }
+  % endif
+yesno: has_defense[i]
+---
+question: |
+  % if i == 'other':
+  You said: ${ fix_punctuation(retaliation_defense_other) }
+  % else:
+  Did you ${ retaliation[i].claim } within the
+  six month period before your landlord threatened
+  you with eviction?
+  % endif
+subquestion: |
+  % if i == 'other':
+  Did this happen within the six month period before 
+  your landlord threatened you with eviction?
+  % endif
+yesno: defense_is_recent[i]
+---
+code: |
+  at_least_one_defense_is_recent = False
+  for defense in retaliation_defenses + ['other']:
+    if has_defense[defense] and defense_is_recent[defense]:
+      at_least_one_defense_is_recent = True
+      break
+  if at_least_one_defense_is_recent:
+    retaliation_entitled_to_presumption = True
+  else:
+    retaliation_entitled_to_presumption = False
+---
+mandatory: True
+question: |
+  Here is your document.
+attachment:
+  docx template file: Answer.docx

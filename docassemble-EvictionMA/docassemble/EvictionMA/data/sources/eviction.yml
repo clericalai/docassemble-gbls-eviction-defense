@@ -1,0 +1,43 @@
+retaliation_defenses:
+  - test defense
+#  - withheld rent
+#  - reported to landlord
+#  - reported to agency
+  - participated in union
+retaliation:
+  test defense:
+    object: DAObject
+    item:
+      question: Do you have test defense?
+      claim: test defense
+      document: >-
+        I have test defense.
+  withheld rent:
+    object: DAObject
+    item:
+      question: Did you withhold rent or tell the landlord about bad conditions?
+      claim: withhold rent
+      document: >-
+        I withheld rent because of bad conditions, and/or told the landlord 
+        about bad conditions.
+  reported to landlord:
+    object: DAObject
+    item:
+      question: Did you report bad conditions to the landlord?
+      claim: report bad conditions to the landlord
+      document: >-
+        I reported bad conditions in writing to the landlord.
+  reported to agency:
+    object: DAObject
+    item:
+      question: Did you report bad conditions to a public agency?
+      claim: report bad conditions to a public agency
+      document: >-
+        I reported bad conditions orally and/or in writing to a public agency.
+  participated in union:
+    object: DAObject
+    item:
+      question: "Did you help organize, join, or participate in a tenant's union?"
+      claim: participate in a tenants union
+      document: >-
+        I helped organize, supported, or participated in a tenant's union.
