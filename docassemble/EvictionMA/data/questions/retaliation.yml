@@ -19,7 +19,7 @@ choices:
   - My landlord says I violated the lease.
   - My landlord doesn't want to rent to me any longer but it's not because of something I did. (For example, my landlord wants to rent to a family member.)
 ---
-question: What court is your case being heard in?
+question: What court is your summary process case being heard in?
 fields: 
   - Court name: eviction_court
     datatype: court
