@@ -10,6 +10,9 @@ metadata:
       organization: Greater Boston Legal Services
   revision_date: 2017-05-30
 ---
+modules:
+  - docassemble.base.util
+---
 interview help:
   heading: |
     About this interview
@@ -38,10 +41,6 @@ fields:
 ---
 question: Please sign below
 signature: client_signature
----
-question: |
-  Do you have a counterclaim?
-yesno: retaliation_counterclaim
 ---
 mandatory: True
 question: |

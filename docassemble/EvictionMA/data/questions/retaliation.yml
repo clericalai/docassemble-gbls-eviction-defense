@@ -1,3 +1,8 @@
+---
+question: |
+  Do you have a counterclaim?
+yesno: retaliation_counterclaim
+---
 objects:
   has_defense: DADict
   defense_is_recent: DADict
