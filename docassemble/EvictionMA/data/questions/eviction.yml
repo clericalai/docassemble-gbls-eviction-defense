@@ -14,9 +14,9 @@ modules:
   - docassemble.base.util
 ---
 include:
-  - basic-questions.yml
-  - basic-questions-gbls.yml
-  - disclaimer.yml
+#  - basic-questions.yml
+#  - basic-questions-gbls.yml
+#  - disclaimer.yml
   - help.yml
   - retaliation.yml
   - glossary.yml
@@ -41,7 +41,7 @@ question: What is ${ tenant.object_possessive('name') }?
 fields: 
   - Name: tenant.name
 ---
-question: What is ${ landlord.object_posseive('name') }?
+question: What is ${ landlord.object_possesive('name') }?
 fields:
   - Name: landlord.name
 ---
@@ -58,12 +58,6 @@ fields:
   - Court name: eviction_court
     datatype: court
   - County: county
----
----
-question: Who are the parties to the case?
-fields:
-  - Landlord: Landlord
-  - Tenant: Tenant
 ---
 question: Please sign below
 signature: client_signature
