@@ -1,0 +1,54 @@
+---
+event: client_kicked_out
+progress: 100
+question: |
+  Sorry, you cannot proceed with the interview.
+subquestion: |
+  You can only proceed with the interview if you agree that your
+  completion of the interview does not create an attorney-client
+  relationship.
+
+  % if user_understands_no_attorney_client_relationship == 'unsure':
+  We suggest that you call us at 617-371-1234 to talk to us about the
+  kinds of services we provide.
+  % endif
+decoration: exit
+buttons:
+  - Exit: exit
+  - Restart: restart
+comment: |
+  This is an endpoint question (note that the only options are exiting
+  or restarting).
+
+---
+question: |
+  Massachusetts Eviction Defense
+subquestion: |
+  This interview is for tenants being evicted in Massachusetts.
+  You should only complete this interview if you were given a summons and complaint
+  and have a date to appear in court. 
+  The interview will help you complete the forms you need to defend an eviction case.
+  You will need to print and deliver a copy to the court and the attorney
+  who represents your landlord. If your landlord doesn't have an attorney 
+  you can bring a copy to your landlord.
+
+  % if interface() == 'web':
+  In the navigation bar above, you can click "[Help]" to see the help
+  text associated with the interview and with the individual question
+  (if any).  If "Help <i class="glyphicon glyphicon-star"></i>"
+  appears in the navigation bar, that means help text specific to the
+  question is available.
+
+  % endif
+
+  [Help]: ${ url_of('help') }
+field: user_saw_initial_screen
+buttons:
+  - Ok, got it: True
+comment: |
+  This is the "splash screen" for the interview.  The question is a
+  multiple-choice question with one option.
+
+  This example demonstrates that HTML can be combined with Markdown
+  in the text of questions.  Here, we wanted to show a particular icon
+  available in Bootstrap, so we inserted raw HTML.
