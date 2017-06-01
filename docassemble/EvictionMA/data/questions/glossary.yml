@@ -1,13 +1,15 @@
 ---
 auto terms:
   notice to quit: |
-    A written notice that tells you why your landlord is ending your tenancy and includes a specific date.
-  complaint: |
-    A document that you file in court to start a lawsuit.
-  lawyer: |
-    Someone with a license to practice law.
+    A written notice that tells you why your landlord is ending your tenancy. It may also be called a 
+    notice of termination of tenancy. It should tell you the date that your tenancy will end. It is not
+    a court notice. Only a judge can tell you to move from your apartment.
+  summons and complaint: |
+    In an eviction case, the summons and complaint will list the reason that your landlord is evicting you
+    and tell you when you need to appear in court and answer the landlord's case.
+  summary process: |
+    Summary process is the legal term for evictions in Massachusetts.
   plaintiff: |
-    The person who starts a case.
+    The person who starts a case. In an eviction, this is normally the landlord.
   defendant: |
-    The person who is on the defensive in a case.  In a lawsuit, the
-    plaintiff sues the defendant.
+    The person who is on the defensive in a case.  In an eviction, this is normally the tenant.

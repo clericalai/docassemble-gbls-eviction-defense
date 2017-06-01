@@ -13,17 +13,36 @@ metadata:
 modules:
   - docassemble.base.util
 ---
-interview help:
-  heading: |
-    About this interview
-  content: |
-    Answer each question. At the end, you will be given a document that you can save
-    and file in court.
----
 include:
   - basic-questions.yml
+  - disclaimer.yml
+  - help.yml
   - retaliation.yml
   - glossary.yml
+---
+objects:
+  - tenant: Individual
+  - landlord: Individual
+---
+question: |
+  What is ${ tenant.object_possessive('address') }?
+fields:
+  - address: tenant.address.address
+  - unit: tenant.address.unit
+    required: False
+  - city: tenant.address.city
+  - state: tenant.address.state
+  - zip: tenant.address.zip
+  - country: tenant.address.country
+    default: 'US'
+---
+question: What is ${ tenant.object_possessive('name') }?
+fields: 
+  - Name: tenant.name
+---
+question: What is ${ landlord.object_posseive('name') }?
+fields:
+  - Name: landlord.name
 ---
 question: |
   What does your notice to quit say is the reason you are being evicted?
