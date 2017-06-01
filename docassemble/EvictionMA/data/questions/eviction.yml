@@ -15,6 +15,7 @@ modules:
 ---
 include:
   - basic-questions.yml
+  - basic-questions-gbls.yml
   - disclaimer.yml
   - help.yml
   - retaliation.yml
