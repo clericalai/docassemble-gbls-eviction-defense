@@ -17,9 +17,9 @@ include:
 #  - basic-questions.yml
 #  - basic-questions-gbls.yml
 #  - disclaimer.yml
-  - help.yml
+#  - help.yml
   - retaliation.yml
-  - glossary.yml
+#  - glossary.yml
 ---
 objects:
   - tenant: Individual
